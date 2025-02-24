@@ -7,9 +7,19 @@
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 </head>
 <body>
-    <object>
-        <embed src="SEP_Memoria2012.swf" width="800" height="600" autoplay="true" />
+    <object id="flashPlayer">
+        <embed src="SEP_Memoria2012.swf" width="800" height="600" />
     </object>
+
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                let swfElement = document.getElementById("flashPlayer");
+                if (swfElement) {
+                    swfElement.click();
+                }
+            }, 1000); // Espera 1 segundo antes de hacer clic
+        };
+    </script>
 </body>
 </html>
-
